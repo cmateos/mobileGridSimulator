@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidCPUBatteryProfiler</string>
+    <string name="cpuUse">Target CPU Usage</string>
+    <string name="cpus"># of CPUs</string>
+    <string name="disconnect">Disconnect the device</string>
+    <string name="lock">Power Lock</string>
+    <string name="notification">Profiling CPU &amp; Battery</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="thre">Convergence threshold</string>
+</resources>

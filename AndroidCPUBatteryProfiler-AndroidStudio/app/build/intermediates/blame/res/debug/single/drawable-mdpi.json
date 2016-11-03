@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "D:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\battery.png",
+        "source": "D:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\src\\main\\res\\drawable-mdpi\\battery.png"
+    }
+]

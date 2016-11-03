@@ -1,0 +1,7 @@
+#Thu Nov 03 15:52:44 ART 2016
+base.0=D\:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_3f4cd5f046febdbc457e8cc966ed2dff31300fa6
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_243366b81782dbdd46a13342d67a9e24e7eebb71\\classes.dex
+base.1=D\:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_243366b81782dbdd46a13342d67a9e24e7eebb71
+file.0=D\:\\Downloads\\AndroidCPUBatteryProfilerAS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_3f4cd5f046febdbc457e8cc966ed2dff31300fa6\\classes.dex
