@@ -1,0 +1,12 @@
+This is the project implementing the mobile device profile generator for Android-powered mobile devices. We provide an unsigned APK for Android 6.0 (and above) mobile devices. However, to build the software and hence generate an instalable for other devices you will need to have installed on your machine:
+
+- A working Java Virtual Machine
+- The Eclipse IDE
+- The Android Developers Tool (ADT) plugin for Eclipse
+- The Android SDK
+
+It is worth noting that the software has not been proved to sucessfully build on several versions of the above components. Nevertheless, we have tested it on very recent versions of them, namely Java 8 (particularly OpenJDK 1.8.0), Eclipse Neon.1 and ADT plugin for Eclipse version (23.0.7). Used Android-specific software was SDK Tools version 24.4.1, SDK Platform-tools version 23.0.1, and Android API level 23 (i.e. Android 6.0). Build was performed on Ubuntu 16.04. 
+
+You might want to check the following link for a complete tutorial/discussion on making Eclipse and Android to work together under Ubuntu: https://askubuntu.com/questions/318246/complete-installation-guide-for-android-sdk-adt-bundle-on-ubuntu/466302
+
+Note: From June 2015 on, Android Studio is the official IDE for ADT (see the announcement posted in https://developer.android.com/studio/tools/sdk/eclipse-adt.html). We will migrate our implementation to Android Studio soon.
