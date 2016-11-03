@@ -1,0 +1,17 @@
+Instructions for running simulation examples
+--------------------------------------------
+
+This folder is a self-contained environment that includes all necessary files for running a mobile grid simulation. By granting execution permissions and running "run.sh" file, you will be running a default simulation example whose output is saved in the "output" folder. You can also change the "SIMULATION_CONF_FILE" in the run.sh script by one of the other examples contained with .cnf extension in the folder (GASchProxy-20A100-30GalaxyTab2-50L9-LSHD_0112-JOBS.cnf, MinMin-20A100-30GalaxyTab2-50L9.cnf). If you want to create a new simulation configuration file you will need to use the template of any of the examples provided, i.e., indicate the full java class name of the scheduler and comparator (;loadbalancing and ;comparator parameters), the flag that indicates wheather the networking energy management is enabled or not, the topology nodes file, paths to the base battery profile of all nodes, the paths to the full battery profile of all nodes, the paths to the files that contains the CPU samples, the path of the file that describes the jobs whose execution is simulated and one entry for each node with information of nodes signal strenght.
+
+About the sub-folders contained in this folder
+----------------------------------------------
+
+db: contains one database creation script used by the simulator to store traceability of jobs and nodes in case a true value is passed as second argument to the RunnableSimulator.jar. It also contains a blank copy of the same script (simulationdb(blank).script).
+
+device_profile: contains a foldes with cpu and battery profiles generated for different mobile device models. The "tools_and_doc" folder contains utils scripts and instructions for device profile generation.
+
+GA_conf: contains a configuration example of a scheduler based on genetic algorithms.
+
+jobs: contains examples of job-related description files.
+
+nodes: contains examples of topologies descriptions files combining different mobile device models along with information about flops and battery Joules as declared by the manufacturers.

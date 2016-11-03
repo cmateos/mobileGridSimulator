@@ -1,0 +1,28 @@
+;loadBalancing: edu.isistan.proxy.GridEnergyAwareLoadbalancing
+;comparator: edu.isistan.node.comparator.SEASPercentBased
+
+;networkEnergyManagementEnable: true
+
+
+
+;nodeFile
+nodes/2A100.cnf
+
+;batteryFile
+device_profile/A100/2A100/000000000001_battMixed.cnf; 00000000-0000-0000-0000-000000000001
+device_profile/A100/2A100/000000000002_battMixed.cnf; 00000000-0000-0000-0000-000000000002
+
+;batteryFullCpuUsageFile
+device_profile/A100/battery100.cnf; 00000000-0000-0000-0000-000000000001
+device_profile/A100/battery100.cnf; 00000000-0000-0000-0000-000000000002
+
+;cpuFile
+device_profile/A100/2A100/000000000001_cpuMixed.cnf; 00000000-0000-0000-0000-000000000001
+device_profile/A100/2A100/000000000002_cpuMixed.cnf; 00000000-0000-0000-0000-000000000002
+
+;jobsEvent
+jobs/shortMax.cnf
+
+;wifiSignalStrength
+-50; 00000000-0000-0000-0000-000000000001
+-90; 00000000-0000-0000-0000-000000000002
