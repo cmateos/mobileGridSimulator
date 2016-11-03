@@ -1,4 +1,5 @@
-This is the project implementing the mobile device profile generator for Android-powered mobile devices. We provide an unsigned APK for Android 6.0 (and above) mobile devices. However, to build the software and hence generate an instalable for other devices you will need to have installed on your machine:
+This is the project implementing the mobile device profile generator for Android-powered mobile devices. 
+We provide an unsigned APK for Android 6.0 (and above) mobile devices. However, to build the software and hence generate an instalable for other devices you will need to have installed on your machine:
 
 - A working Java Virtual Machine
 - The Eclipse IDE
