@@ -1,0 +1,38 @@
+Overview
+--------
+
+The simulation software was thought for evaluating different criteria for job scheduling over a cluster of mobile devices (mobile Grid) that act as main resource providers. The network topology assumed is the typical job scheduling scenario in these environments, which consists in a fixed proxy node that makes job scheduling decisions based on the information known of mobile devices connected to it, e.g., through a wifi access point. All jobs arrive to the proxy node, and this latter schedules them to the mobile devices according to some criterion configured. Mobile devices execute jobs assigned by the proxy and send back the results. Currently, we mostly support CPU-intensive jobs, and the devices energy consumption related to CPU usage, and stable support for considering devices energy consumption due to transfering operations (e.g. data-intensive jobs).
+
+About how devices energy consumption is simulated
+-------------------------------------------------
+
+Mobile devices energy consumption is simulated through profiles that are switched by a BatteryManager component based on the state of the mobile device. The possible states are idle and executing a job. When iddle, the energy consumption is represented by a base usage profile while in executing state, such energy consumption is represented through a usage profile whose CPU utilization is 100%. Job execution in a mobile device advances according to the available CPU, which means that jobs do not interfere with the CPU utilization derived from device owner usage. When a device finishes a job execution, it sends back the output to the proxy and continues with the execution of the next job of its local queue. If the queue is empty, the BatteryManager switches the energy consumption profile of the device to the base usage profile until a new job is received. Either in idle or executing state, a device remains connected to the proxy until the BatteryManager reads a special battery event of the current profile that indicates that its battery is depleted.
+
+About the output of a simulation
+--------------------------------
+
+All events happening during a simulation, e.g., jobs arrivals, jobs assignments, jobs completions, devices arriving to/leaving the mobile Grid, devices state of charge, along with performance measurements like total completed jobs, and initial configured parameters are printed to standard output. Traceability of events is possible since they are printed with timestamp information relative to the start time of the simulation. Additionally, jobs and devices statistics are persisted in a relational database for further processing.
+
+Software implementation details
+-------------------------------
+
+The abovementioned features are implemented based on discrete event simulation. The source code of the software is shipped under five different projects, namely:
+
+- AndroidCPUBatteryProfiler-AndroidStudio: This is the project implementing the mobile device profile generator. It is aimed at Android-powered mobile devices. You can open this project using Android Studio.
+
+- AndroidCPUBatteryProfiler-Eclipse: Same as above, but it is an Eclipse project based on the ADT (Android Developers Tool) plugin for Eclipse. 
+
+- Simulator: Eclipse project implementing base abstractions related to event processing, such as entities, events, event queues and so on. 
+
+- MobileGrid: Eclipse project instantiating the Simulator project. It implements abstractions related to job scheduling in mobile Grids, such as devices, network-related entities and schedulers. 
+
+- MobileGridSimulation: Eclipse project specializing the MobileGrid project to materialize concrete job scheduling algorithms for mobile Grids. Examples are SEAS [1], job stealing-based algorithms [2,3,4] and generic algoriths. This project also contains detailed examples to generate profiles for Android mobile devices, and configuring/running simulations.
+
+References
+----------
+
+[1] J. M. Rodriguez, A. Zunino, M. Campo, Mobile grid seas: Simple energy-aware scheduler. Proceedings of the 3rd High-Performance Computing Symposium (HPCLatam 2010) - In conjunction with 39th JAIIO.  Buenos Aires, Argentina. 2010.
+[2] J. M. Rodriguez, C. Mateos, A. Zunino: "Energy-efficient Job Stealing for CPU-intensive Processing in Mobile Devices". Computing. Vol. 96, Number 2, pp. 87-117. Springer. 2014. ISSN 0010-485X.
+[3] M. Hirsch, J. M. Rodriguez, A. Zunino, C. Mateos: "Battery-aware Centralized Schedulers for CPU-bound Jobs in Mobile Grids". Pervasive and Mobile Computing. Vol. 29, pp. 73-94. Elsevier. 2016. ISSN 1574-1192.
+[4] M. Hirsch, J. M. Rodriguez, C. Mateos, A. Zunino: "A two-phase energy-aware scheduling approach for CPU-intensive jobs in mobile Grids". Journal of Grid Computing. In press. Springer. 2016. ISSN 1570-7873.
+
