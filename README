@@ -34,5 +34,5 @@ References
 [1] J. M. Rodriguez, A. Zunino, M. Campo, Mobile grid seas: Simple energy-aware scheduler. Proceedings of the 3rd High-Performance Computing Symposium (HPCLatam 2010) - In conjunction with 39th JAIIO.  Buenos Aires, Argentina. 2010.
 [2] J. M. Rodriguez, C. Mateos, A. Zunino: "Energy-efficient Job Stealing for CPU-intensive Processing in Mobile Devices". Computing. Vol. 96, Number 2, pp. 87-117. Springer. 2014. ISSN 0010-485X.
 [3] M. Hirsch, J. M. Rodriguez, A. Zunino, C. Mateos: "Battery-aware Centralized Schedulers for CPU-bound Jobs in Mobile Grids". Pervasive and Mobile Computing. Vol. 29, pp. 73-94. Elsevier. 2016. ISSN 1574-1192.
-[4] M. Hirsch, J. M. Rodriguez, C. Mateos, A. Zunino: "A two-phase energy-aware scheduling approach for CPU-intensive jobs in mobile Grids". Journal of Grid Computing. In press. Springer. 2016. ISSN 1570-7873.
+[4] M. Hirsch, J. M. Rodriguez, C. Mateos, A. Zunino: "A two-phase energy-aware scheduling approach for CPU-intensive jobs in mobile Grids". Journal of Grid Computing. Vol 15(1), pp.55-80. Springer. 2017. ISSN 1570-7873.
 
