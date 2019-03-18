@@ -31,8 +31,9 @@ The abovementioned features are implemented based on discrete event simulation. 
 References
 ----------
 
-[1] J. M. Rodriguez, A. Zunino, M. Campo, Mobile grid seas: Simple energy-aware scheduler. Proceedings of the 3rd High-Performance Computing Symposium (HPCLatam 2010) - In conjunction with 39th JAIIO.  Buenos Aires, Argentina. 2010.
-[2] J. M. Rodriguez, C. Mateos, A. Zunino: "Energy-efficient Job Stealing for CPU-intensive Processing in Mobile Devices". Computing. Vol. 96, Number 2, pp. 87-117. Springer. 2014. ISSN 0010-485X.
-[3] M. Hirsch, J. M. Rodriguez, A. Zunino, C. Mateos: "Battery-aware Centralized Schedulers for CPU-bound Jobs in Mobile Grids". Pervasive and Mobile Computing. Vol. 29, pp. 73-94. Elsevier. 2016. ISSN 1574-1192.
-[4] M. Hirsch, J. M. Rodriguez, C. Mateos, A. Zunino: "A two-phase energy-aware scheduling approach for CPU-intensive jobs in mobile Grids". Journal of Grid Computing. Vol 15(1), pp.55-80. Springer. 2017. ISSN 1570-7873.
-
+1. M. Hirsch, C. Mateos, J. M. Rodriguez, A. Zunino: "A Trace-driven Toolkit for Simulating Mobile Device Clusters in Dew Computing Environments". Software: Practice and Experience. In press. John Wiley & Sons. 2019. Indexed SCI/SCI-E. 
+2. M. Hirsch, C. Mateos, A. Zunino: "Augmenting Computing Capabilities at the Edge by Jointly Exploiting Mobile Devices: A Survey". Future Generation Computer Systems. Volume 88, pp. 644-662. Elsevier. 2018. Indexed SCI/SCI-E.
+3. M. Hirsch, J. M. Rodriguez, C. Mateos, A. Zunino: "A Two-Phase Energy-Aware Scheduling Approach for CPU-Intensive Jobs in Mobile Grids". Journal of Grid Computing. Volume 15, Issue 1, pp. 55-80. Springer. 2017. Indexed SCI/SCI-E.
+4. A. Rodriguez, C. Mateos, A. Zunino: "Improving Scientific Application Execution on Android Mobile Devices via Code Refactorings". Software: Practice and Experience. Volume 47, Issue 5, pp. 763-796 . 2017. John Wiley & Sons. Indexed SCI/SCI-E.
+5. M. Hirsch, J. M. Rodriguez, A. Zunino, C. Mateos: "Battery-aware Centralized Schedulers for CPU-bound Jobs in Mobile Grids". Pervasive and Mobile Computing. Volume 29, pp. 73-94. 2016. Elsevier. Indexed SCI/SCI-E.
+6. J. M. Rodriguez, C. Mateos, A. Zunino: "Energy-efficient Job Stealing for CPU-intensive Processing in Mobile Devices". Computing. Vol. 96, Number 2, pp. 87-117. Springer. 2014. Indexed SCI/SCI-E.
