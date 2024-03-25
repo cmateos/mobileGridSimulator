@@ -1,5 +1,6 @@
 package edu.isistan.proxy.bufferedproxy.genetic.util;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -32,12 +33,12 @@ public class SolutionFileReader {
 	}
 	
 	private void nextLine() throws IOException{
-		this.line=this.solutionContiner.readLine();
+		this.line=BoundedLineReader.readLine(this.solutionContiner, 5_000_000);
 		if(line==null) return;
 		this.line=this.line.trim();
 		while(line.startsWith("#")||
 				line.equals(""))
-			this.line=this.solutionContiner.readLine().trim();
+			this.line=BoundedLineReader.readLine(this.solutionContiner, 5_000_000).trim();
 	}
 
 }

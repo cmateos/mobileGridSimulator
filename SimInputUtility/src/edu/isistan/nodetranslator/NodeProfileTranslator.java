@@ -1,5 +1,6 @@
 package edu.isistan.nodetranslator;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -58,7 +59,7 @@ public class NodeProfileTranslator {
 	public void read(String string) {
 		try {
 			BufferedReader rd=new BufferedReader(new FileReader(string));
-			String line=rd.readLine();
+			String line=BoundedLineReader.readLine(rd, 5_000_000);
 			if(line.contains("CPU"))
 				this.startTime=Long.parseLong(line.substring(0, line.indexOf(",")));
 			else{
@@ -70,7 +71,7 @@ public class NodeProfileTranslator {
 					this.parceCPU(line);
 				else if(!line.trim().equals(""))
 					this.parceBattery(line);
-				line=rd.readLine();
+				line=BoundedLineReader.readLine(rd, 5_000_000);
 			}
 		} catch (Exception e) {	
 			e.printStackTrace();
