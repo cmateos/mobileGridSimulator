@@ -146,7 +146,7 @@ public class DeviceLoader extends Thread {
 		try {
 			String line=this.cpuFile.readLine();
 			while(line!=null){
-				if(line.trim().equals("")){
+				if("".equals(line.trim())){
 					line=this.cpuFile.readLine();
 					break;
 				}
@@ -181,7 +181,7 @@ public class DeviceLoader extends Thread {
 			int battery=0;
 			double time=0;
 			while(line!=null){
-				if(line.trim().equals("")){
+				if("".equals(line.trim())){
 					line=rd.readLine();			
 				} else
 				{

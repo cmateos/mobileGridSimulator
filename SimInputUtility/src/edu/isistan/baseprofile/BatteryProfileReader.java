@@ -60,7 +60,7 @@ public class BatteryProfileReader implements ProfileReader{
 			previousBattSample=currentBattSample;			
 			currentBattSample=batteryProfile.readLine();			
 		
-			while (currentBattSample != null && currentBattSample.trim().equals("")){					
+			while (currentBattSample != null && "".equals(currentBattSample.trim())){					
 					currentBattSample=batteryProfile.readLine();
 			}						
 		} catch (IOException e) {

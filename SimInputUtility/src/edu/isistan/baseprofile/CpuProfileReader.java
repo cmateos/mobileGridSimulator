@@ -51,7 +51,7 @@ public class CpuProfileReader implements ProfileReader{
 				previousCpuSample = currentCpuSample;
 				currentCpuSample=cpuProfile.readLine();
 			
-				while (currentCpuSample != null && currentCpuSample.trim().equals("")){					
+				while (currentCpuSample != null && "".equals(currentCpuSample.trim())){					
 						currentCpuSample=cpuProfile.readLine();
 				}					
 			} catch (IOException e) {

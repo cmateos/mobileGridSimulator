@@ -84,9 +84,9 @@ public class HungarianAlgorithm {
 		{
 			for (int j=0; j<array[i].length; j++)
 			{
-				if (randomMethod.equals("random"))
+				if ("random".equals(randomMethod))
 					{array[i][j] = generator.nextDouble();}
-				if (randomMethod.equals("gaussian"))
+				if ("gaussian".equals(randomMethod))
 				{
 						array[i][j] = generator.nextGaussian()/4;		//range length to 1.
 						if (array[i][j] > 0.5) {array[i][j] = 0.5;}		//eliminate outliers.
@@ -146,7 +146,7 @@ public class HungarianAlgorithm {
 	{
 		double[][] cost = copyOf(array);	//Create the cost matrix
 		
-		if (sumType.equalsIgnoreCase("max"))	//Then array is weight array. Must change to cost.
+		if ("max".equalsIgnoreCase(sumType))	//Then array is weight array. Must change to cost.
 		{
 			double maxWeight = findLargest(cost);
 			for (int i=0; i<cost.length; i++)		//Generate cost by subtracting.

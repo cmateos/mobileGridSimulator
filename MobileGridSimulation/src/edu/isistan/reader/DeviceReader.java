@@ -78,7 +78,7 @@ public class DeviceReader {
 		if(line==null) return;
 		this.line=this.line.trim();
 		while(line.startsWith("#")||
-				line.equals(""))
+				"".equals(line))
 			this.line=this.conf.readLine().trim();
 	}
 

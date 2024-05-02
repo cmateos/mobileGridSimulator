@@ -68,7 +68,7 @@ public class NodeProfileTranslator {
 			while(line!=null){
 				if(line.contains("CPU"))
 					this.parceCPU(line);
-				else if(!line.trim().equals(""))
+				else if(!"".equals(line.trim()))
 					this.parceBattery(line);
 				line=rd.readLine();
 			}
