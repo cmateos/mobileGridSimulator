@@ -1,5 +1,6 @@
 package edu.isistan.proxy.bufferedproxy.genetic;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -20,7 +21,7 @@ public class TournamentParentSelector extends ParentSelector {
 	@Override 
 	public void setPopulation(ArrayList<Short[]> selectableIndividuals){
 		super.setPopulation(selectableIndividuals);
-		rand = new Random();
+		rand = new SecureRandom();
 	}
 	
 	@Override

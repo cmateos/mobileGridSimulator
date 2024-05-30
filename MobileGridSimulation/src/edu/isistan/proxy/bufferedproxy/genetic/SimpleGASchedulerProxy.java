@@ -1,5 +1,6 @@
 package edu.isistan.proxy.bufferedproxy.genetic;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -311,7 +312,7 @@ public class SimpleGASchedulerProxy extends BufferedSchedulerProxy {
 
 	private ArrayList<Short[]> generateRandomPopulation(int populationSize,	int individualChromosomesAmount, int individualAlleleMaxValue) {
 		ArrayList<Short[]> randPopulation = new ArrayList<Short[]>();
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 		
 		int individualIndex = 0;
 		/*if (populationSize >= individualAlleleMaxValue){

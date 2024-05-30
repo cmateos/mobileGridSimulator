@@ -38,6 +38,7 @@ package edu.isistan.proxy.bufferedproxy;
  */
 
 import static java.lang.Math.*;
+import java.security.SecureRandom;
 import java.util.*;
 
 public class HungarianAlgorithm {
@@ -79,7 +80,7 @@ public class HungarianAlgorithm {
 	public static void generateRandomArray	//Generates random 2-D array.
 	(double[][] array, String randomMethod)	
 	{
-		Random generator = new Random();
+		Random generator = new SecureRandom();
 		for (int i=0; i<array.length; i++)
 		{
 			for (int j=0; j<array[i].length; j++)
