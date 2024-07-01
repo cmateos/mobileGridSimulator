@@ -1,5 +1,6 @@
 package edu.isistan.reader;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.util.StringTokenizer;
 import java.util.concurrent.locks.ReentrantLock;
@@ -35,12 +36,12 @@ public class JobReader extends Thread {
 			this.simLock.lock();
 			int src=Simulation.getEntityId("PROXY");
 			this.simLock.unlock();
-			String line=this.conf.readLine();
+			String line=BoundedLineReader.readLine(this.conf, 5_000_000);
 			boolean lackingJobParameter = false;
 			while(line!=null){
 				line=line.trim();
 				if(line.equals("")||line.startsWith("#")){
-					line=this.conf.readLine();
+					line=BoundedLineReader.readLine(this.conf, 5_000_000);
 				} else {
 					StringTokenizer ts=new StringTokenizer(line, ";");
 					ts.nextToken();
@@ -70,7 +71,7 @@ public class JobReader extends Thread {
 					Simulation.addEvent(e);
 					this.simLock.unlock();
 
-					line=this.conf.readLine();
+					line=BoundedLineReader.readLine(this.conf, 5_000_000);
 				}
 			}
 			if (lackingJobParameter){
