@@ -1,5 +1,6 @@
 package edu.isistan.proxy.bufferedproxy.genetic;
 
+import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -10,8 +11,8 @@ public class IncrementalMutationOperator extends MutationOperator {
 	
 	public IncrementalMutationOperator(double mutationRate, int geneMaxValue) {
 		super(mutationRate,geneMaxValue);
-		geneCountGen = new Random();
-		genePositionGen = new Random();
+		geneCountGen = new SecureRandom();
+		genePositionGen = new SecureRandom();
 	}
 
 	@Override

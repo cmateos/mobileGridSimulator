@@ -1,5 +1,6 @@
 package edu.isistan.network;
 
+import java.security.SecureRandom;
 import java.util.Random;
 import java.util.Set;
 
@@ -10,8 +11,8 @@ public class AverageBroadCastLink extends BroadCastLink {
 	
 	protected double stdDelay=0;
 	protected double stdBandwidht=0;
-	protected Random delayRandom = new Random();
-	protected Random bandwidhtRandom = new Random();
+	protected Random delayRandom = new SecureRandom();
+	protected Random bandwidhtRandom = new SecureRandom();
 	
 	public AverageBroadCastLink(){
 		super(0, 0, null, null);
