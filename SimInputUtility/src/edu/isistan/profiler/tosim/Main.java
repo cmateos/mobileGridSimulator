@@ -1,5 +1,6 @@
 package edu.isistan.profiler.tosim;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -26,10 +27,10 @@ public class Main {
 		try {
 			BufferedReader br=new BufferedReader(new FileReader(f));
 			List<String> result=new ArrayList<String>();
-			String line=br.readLine();
+			String line=BoundedLineReader.readLine(br, 5_000_000);
 			while (line!=null) {
 				result.add(line);
-				line=br.readLine();
+				line=BoundedLineReader.readLine(br, 5_000_000);
 			}
 			br.close();
 			return result;
