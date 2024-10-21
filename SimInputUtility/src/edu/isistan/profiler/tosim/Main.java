@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class Main {
 	
 	public static void stringListToFile(List<String> st,File f){
 		try {
-			BufferedWriter bw=new BufferedWriter(new FileWriter(f));
+			BufferedWriter bw=Files.newBufferedWriter(f.toPath());
 			for (String string : st) {
 				bw.write(string+"\n");
 			}

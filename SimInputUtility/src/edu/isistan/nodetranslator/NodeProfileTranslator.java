@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -27,7 +28,7 @@ public class NodeProfileTranslator {
 
 	public void saveBattery(String string) {
 		try {
-			BufferedWriter bw=new BufferedWriter(new FileWriter(string));
+			BufferedWriter bw=Files.newBufferedWriter(string.toPath());
 			int last=-1;
 			for(Pair<Long,Integer> p:this.battery)
 				if(last!=p.getData().intValue()){
@@ -44,7 +45,7 @@ public class NodeProfileTranslator {
 
 	public void saveCPU(String string) {
 		try {
-			BufferedWriter bw=new BufferedWriter(new FileWriter(string));
+			BufferedWriter bw=Files.newBufferedWriter(string.toPath());
 			this.cpu.get(0).setTime(1L);
 			for(Pair<Long,Double> p:this.cpu)
 				bw.write(p.toString()+"\n");
