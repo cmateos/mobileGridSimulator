@@ -1,5 +1,6 @@
 package edu.isistan.proxy.bufferedproxy.genetic;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -57,7 +58,7 @@ public class MPointCrossoverOperator extends CrossoverOperator {
 
 	private ArrayList<Integer> getCrossingPoints() {
 		ArrayList<Integer> crossingPoints = new ArrayList<Integer>();
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 		
 		for (int i = 0; i < crossoverPointNmb; i++ ){
 			int point = rand.nextInt(genesAmount);
