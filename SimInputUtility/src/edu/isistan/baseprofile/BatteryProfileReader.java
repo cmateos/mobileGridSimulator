@@ -1,5 +1,6 @@
 package edu.isistan.baseprofile;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,10 +59,10 @@ public class BatteryProfileReader implements ProfileReader{
 	public void readSample(){
 		try {
 			previousBattSample=currentBattSample;			
-			currentBattSample=batteryProfile.readLine();			
+			currentBattSample=BoundedLineReader.readLine(batteryProfile, 5_000_000);			
 		
 			while (currentBattSample != null && currentBattSample.trim().equals("")){					
-					currentBattSample=batteryProfile.readLine();
+					currentBattSample=BoundedLineReader.readLine(batteryProfile, 5_000_000);
 			}						
 		} catch (IOException e) {
 			e.printStackTrace();			

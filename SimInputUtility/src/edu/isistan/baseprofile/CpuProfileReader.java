@@ -1,5 +1,6 @@
 package edu.isistan.baseprofile;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,10 +50,10 @@ public class CpuProfileReader implements ProfileReader{
 			try {
 				antepenultimateCpuSample = previousCpuSample;
 				previousCpuSample = currentCpuSample;
-				currentCpuSample=cpuProfile.readLine();
+				currentCpuSample=BoundedLineReader.readLine(cpuProfile, 5_000_000);
 			
 				while (currentCpuSample != null && currentCpuSample.trim().equals("")){					
-						currentCpuSample=cpuProfile.readLine();
+						currentCpuSample=BoundedLineReader.readLine(cpuProfile, 5_000_000);
 				}					
 			} catch (IOException e) {
 				e.printStackTrace();			
