@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -106,8 +107,8 @@ public class BaseProfileGenerator {
 		System.out.println("time_interval_function;"+timeintervalDistribution.toString());
 		System.out.println("time_between_session_function;"+timestampDistribution.toString());		
 		try {			
-			batteryMixedProfile = new BufferedWriter(new FileWriter(new File(outprefix+"_battMixed.cnf")));		
-			cpuMixedProfile = new BufferedWriter(new FileWriter(new File(outprefix+"_cpuMixed.cnf")));
+			batteryMixedProfile = Files.newBufferedWriter(new File(outprefix+"_battMixed.cnf").toPath());		
+			cpuMixedProfile = Files.newBufferedWriter(new File(outprefix+"_cpuMixed.cnf").toPath());
 		} catch (IOException e1) {			
 			e1.printStackTrace();
 		}

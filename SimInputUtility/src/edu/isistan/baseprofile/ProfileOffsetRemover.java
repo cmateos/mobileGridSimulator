@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class ProfileOffsetRemover {
 
@@ -23,7 +24,7 @@ public class ProfileOffsetRemover {
 			}
 		BufferedWriter profOut;
 		try {
-			profOut = new BufferedWriter(new FileWriter(new File(profileOut)));
+			profOut = Files.newBufferedWriter(new File(profileOut).toPath());
 			String currSample = profIn.currentSample();
 			long offset = 1;
 			long timeline = 1 + offset;//this is to force to the cpu sample start at the 2nd millisecond
