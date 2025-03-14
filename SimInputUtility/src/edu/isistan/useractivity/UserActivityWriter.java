@@ -3,6 +3,7 @@ package edu.isistan.useractivity;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class UserActivityWriter {
@@ -24,7 +25,7 @@ public class UserActivityWriter {
     private long minInactivityIntervalDuration;
     private long maxInactivityIntervalDuration;
 
-    private static Random random = new Random();
+    private static Random random = new SecureRandom();
 
     private UserActivityWriter(String outputFile,
                               long maxTime,

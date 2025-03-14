@@ -1,5 +1,6 @@
 package edu.isistan.proxy.bufferedproxy.genetic;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -17,7 +18,7 @@ public class HalfUniformCrossoverOperator extends CrossoverOperator {
 		
 		ArrayList<Integer> positionsWithdifferentGenes = getPositionsWithDifferentGenes(parent1, parent2); 
 		ArrayList<Short[]> childs = new ArrayList<Short[]>(); 
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 		
 		Short[] child1 = parent1.clone();
 		Short[] child2 = parent2.clone();
