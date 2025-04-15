@@ -1,5 +1,6 @@
 package edu.isistan.reader;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -144,10 +145,10 @@ public class DeviceLoader extends Thread {
 
 	private void readCPUEvents() {
 		try {
-			String line=this.cpuFile.readLine();
+			String line=BoundedLineReader.readLine(this.cpuFile, 5_000_000);
 			while(line!=null){
 				if(line.trim().equals("")){
-					line=this.cpuFile.readLine();
+					line=BoundedLineReader.readLine(this.cpuFile, 5_000_000);
 					break;
 				}
 				StringTokenizer st=new StringTokenizer(line, ";");
@@ -165,7 +166,7 @@ public class DeviceLoader extends Thread {
 				Simulation.addEvent(e);
 				this.simLock.unlock();
 				
-				line=this.cpuFile.readLine();
+				line=BoundedLineReader.readLine(this.cpuFile, 5_000_000);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -177,25 +178,25 @@ public class DeviceLoader extends Thread {
 	private List<ProfileData> readBattery(BufferedReader rd) {
 		List<ProfileData> pd=new ArrayList<ProfileData>();
 		try {
-			String line=rd.readLine();
+			String line=BoundedLineReader.readLine(rd, 5_000_000);
 			int battery=0;
 			double time=0;
 			while(line!=null){
 				if(line.trim().equals("")){
-					line=rd.readLine();			
+					line=BoundedLineReader.readLine(rd, 5_000_000);			
 				} else
 				{
 					String[] data=line.split(";");
 					if(line.startsWith("ADD_NODE;")){
 						this.startTime=Integer.parseInt(data[1]);
-						line=rd.readLine();
+						line=BoundedLineReader.readLine(rd, 5_000_000);
 					}
 					else
 					{
 						int nbattery=0;
 						double ntime=0;
 						if(line.startsWith("LEFT_NODE;")){
-							line=rd.readLine();
+							line=BoundedLineReader.readLine(rd, 5_000_000);
 							nbattery=0;
 							ntime=Double.parseDouble(data[1]);
 						}
@@ -218,7 +219,7 @@ public class DeviceLoader extends Thread {
 							battery=nbattery;
 							time=ntime;
 						}
-						line=rd.readLine();
+						line=BoundedLineReader.readLine(rd, 5_000_000);
 					}
 				}
 			}

@@ -1,5 +1,6 @@
 package edu.isistan.proxy.bufferedproxy.genetic;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -189,12 +190,12 @@ public class GAConfiguration {
 	}
 	
 	private void nextLine() throws IOException{
-		this.line=this.conf.readLine();
+		this.line=BoundedLineReader.readLine(this.conf, 5_000_000);
 		if(line==null) return;
 		this.line=this.line.trim();
 		while(line.startsWith("#")||
 				line.equals("")){
-			this.line=this.conf.readLine();
+			this.line=BoundedLineReader.readLine(this.conf, 5_000_000);
 			if(line==null) return;
 			this.line=this.line.trim();
 		}

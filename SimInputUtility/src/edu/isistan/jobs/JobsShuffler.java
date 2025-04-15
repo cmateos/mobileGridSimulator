@@ -1,5 +1,6 @@
 package edu.isistan.jobs;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -25,14 +26,14 @@ public class JobsShuffler {
 	    long maxTime=Long.parseLong(args[2]);
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(jobsFile));
-			String line= br.readLine();
+			String line= BoundedLineReader.readLine(br, 5_000_000);
 			while (line!=null){
 				if (!line.startsWith("#")){
 					String[] jobParts=line.split(";");
 					long newtime =( (long) ( Math.random()*(maxTime-minTime)) ) + minTime;
 					jobs.add(new JobInformation(newtime,Integer.parseInt(jobParts[0]),Long.parseLong(jobParts[1]),Integer.parseInt(jobParts[3]),Integer.parseInt(jobParts[4])));
 				}
-				line=br.readLine();
+				line=BoundedLineReader.readLine(br, 5_000_000);
 			}
 			br.close();
 			

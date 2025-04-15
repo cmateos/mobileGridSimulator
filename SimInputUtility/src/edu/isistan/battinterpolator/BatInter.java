@@ -1,5 +1,6 @@
 package edu.isistan.battinterpolator;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -73,10 +74,10 @@ public class BatInter {
 		List<String> result=new ArrayList<String>();
 		try {
 			BufferedReader bf=new BufferedReader(new FileReader(f));
-			String line=bf.readLine();
+			String line=BoundedLineReader.readLine(bf, 5_000_000);
 			while(line!=null){
 				result.add(line);
-				line=bf.readLine();
+				line=BoundedLineReader.readLine(bf, 5_000_000);
 			}
 			bf.close();
 		} catch (Exception e) {
